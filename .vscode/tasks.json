@@ -22,6 +22,7 @@
                 "-I/usr/include/ncursesw",
                 "-I/usr/include/tcl8.6",
                 "-I${linux_dir}/dlstorm",
+                "-I${linux_dir}/${base_app_dir}",
                 "${linux_dir}/${base_app_dir}/gaf.cpp",
                 "${linux_dir}/dlstorm/dlcs.cpp",
                 "${linux_dir}/dlstorm/c_log.cpp",

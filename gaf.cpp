@@ -6,7 +6,7 @@
  **   License:      BSD
  **   Copyright:    2020
  **   File:         gaf.cpp
- **   Description:  GAF manager
+ **   Description:  GAF Game Archive File manager
  **   Author:       Seth Parson aka Deadline
  **   Twitter:      @Sethcoder
  **   Website:      www.sethcoder.com
@@ -22,8 +22,18 @@ char  szDir[1024];
 
 GAF_SCANCALLBACK dir_callback(GAFFile_ElmHeader *ElmInfo, LPSTR FullPath) {
     switch (ElmInfo->Type) {
-        case GAFELMTYPE_FILE: printf("%20ld %-25s \n", ElmInfo->FileSize, ElmInfo->Name); break;
-        case GAFELMTYPE_DIR: printf("====== DIR: %-25s \n", ElmInfo->Name); break;
+        case GAFELMTYPE_FILE:
+#ifndef _WIN32
+            printf("%20d %-25s \n", ElmInfo->FileSize, ElmInfo->Name);
+#else
+            printf("%20ld %-25s \n", ElmInfo->FileSize, ElmInfo->Name);
+#endif
+            break;
+        case GAFELMTYPE_DIR:
+            
+            printf("====== DIR: %-25s \n", ElmInfo->Name);
+            
+            break;
         default: break;
     }
     return 0;
@@ -32,7 +42,11 @@ GAF_SCANCALLBACK dir_callback(GAFFile_ElmHeader *ElmInfo, LPSTR FullPath) {
 GAF_SCANCALLBACK dir_callback_extract(GAFFile_ElmHeader *ElmInfo, LPSTR FullPath) {
     switch (ElmInfo->Type) {
         case GAFELMTYPE_FILE:
-            printf("%20ld %s/%-25s \n", ElmInfo->FileSize, szDir, ElmInfo->Name);  // wut
+#ifndef _WIN32
+            printf("%20d %-25s \n", ElmInfo->FileSize, ElmInfo->Name);
+#else
+            printf("%20ld %-25s \n", ElmInfo->FileSize, ElmInfo->Name);
+#endif
             pGAF->ExtractFile_ToFile(va("%s/%s", szDir, ElmInfo->Name), ElmInfo->Name);
             break;
         case GAFELMTYPE_DIR:
