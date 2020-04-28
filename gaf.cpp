@@ -154,7 +154,10 @@ int main(int argc, char *argv[]) {
 void print_help(void) {
     printf("\n");
 
-    printf("GAF Game Archive File by Seth Parson sethcoder.com\n");
+    printf("GAF Game Archive File by Seth Parson aka Deadline sethcoder.com\n");
+    printf("This application is based on the NukeDX SDK NUK file format.\n");
+    printf("nukesoftware.dk (Which is no longer available.)\n");
+    printf("NOTE: This archive format only nests one level of folder.\n");
     printf("=======================================================\n");
     printf("VERSION: %s compiled %s @ %s \n", GAFMAKEVERSION, __DATE__, __TIME__);
     printf("=======================================================\n");
