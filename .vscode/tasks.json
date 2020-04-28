@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "win_dir": "E:/dev/repos",
+            "linux_dir": "/files/dev/repos",
+            "base_app_dir": "gaf",
+            "configure": "../configure --with-bash-malloc=no CFLAGS=\"-O3 -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free\" LDFLAGS=-L/usr/local/lib LIBS=\"-ltcmalloc -lcurl\" CC=clang"
+        }
+    },
+    "tasks": [
+        {
+            "label": "C/C++: g++ build (linux) GAF",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-Wall",
+                "-D_DLCS_CONSOLE",
+                "-Wno-unknown-pragmas",
+                "-fpermissive",
+                "-I/usr/include/ncursesw",
+                "-I/usr/include/tcl8.6",
+                "-I${linux_dir}/dlstorm",
+                "${linux_dir}/${base_app_dir}/gaf.cpp",
+                "${linux_dir}/dlstorm/dlcs.cpp",
+                "${linux_dir}/dlstorm/c_log.cpp",
+                "${linux_dir}/dlstorm/c_gaf.cpp",
+                "${linux_dir}/dlstorm/dlcs_linux.cpp",
+                "${linux_dir}/dlstorm/dlcs_gnu.cpp",
+                "${linux_dir}/dlstorm/md5.cpp",
+                "-lz",
+                "-lsqlite3",
+                "-o",
+                "${linux_dir}/${base_app_dir}/gaf"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ]
+
+}
