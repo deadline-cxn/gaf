@@ -18,7 +18,7 @@
  ***************************************************************/
 
 #include "c_gaf.h"
-#include "dlstorm.h"
+#include "dlcs.h"
 
 #define GAFMAKEVERSION "5.0.0"
 
