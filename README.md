@@ -1,6 +1,6 @@
 # GAF (GAME ARCHIVE FILE)
 
-GAF Game Archive File by @sparson aka Deadline sethcoder.com
+GAF Game Archive File. This program is a console application to manage .GAF files for use with other applications using the DLStorm Library.
 
 This application is based on the NukeDX SDK NUK file format by Odin Jensen from nukesoftware.dk (Which is no longer available) 
 
@@ -23,4 +23,10 @@ gaf <gaf file> [-a:<filename>] [-z:<dir>] [-d:<file>] [-c:<dir>] [-x]
 -l list contents<br>
 ```
 
-##### The DLSTORM library is required to compile
+##### The DLStorm library is required to compile
+
+### Contact Me!
+
+- Twitter: @sethcoder
+- Email: defectiveseth@gmail.com
+
