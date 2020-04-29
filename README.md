@@ -6,9 +6,14 @@ This application is based on the NukeDX SDK NUK file format by Odin Jensen from 
 
 ###### NOTE: This archive format only nests one level of folder
 
+### GAF Info
 
-Current version: 5.0.0
+###### Current version: 5.0.0
 
+``` 
+gaf     - Linux binary
+gaf.exe - Windows binary
+```
 
 ### USAGE:
 
